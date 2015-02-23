@@ -14,13 +14,13 @@ Created RPMs are stored into `/rpm/**/rpm/RPMS/**/*.rpm` folder on the host.
 
 To build an RPM for a single project use `./gradlew <project name>-rpm`. For example to build Spark RPM do:
 
-  # Build Spark 
+    # Build Spark RPM
     cd ~/bigtop
     ./gradlew spark-rpm
 
 To build all BigTop RPMS use `./gradlew <project name>-rpm`:
 
-  # Build Spark 
+    # Build all RPMs
     cd ~/bigtop
     ./gradlew rpm
 
