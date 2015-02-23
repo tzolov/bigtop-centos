@@ -2,7 +2,7 @@ FROM centos:centos6
 
 MAINTAINER Christian Tzolov "https://github.com/tzolov"
 
-RUN echo "---------------------- Create 'bigtop' user with sudo, paswordless access --------------------------" ;\
+RUN echo "---------------------- Create sudo & paswordless 'bigtop' user --------------------------" ;\
    yum -y install sudo ;\
    useradd bigtop && echo "bigtop:bigtop" | chpasswd && gpasswd -a bigtop wheel ;\
    mkdir -p /home/bigtop && chown -R bigtop:bigtop /home/bigtop ;\
