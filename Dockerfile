@@ -2,7 +2,7 @@ FROM centos:centos6
 
 MAINTAINER Christian Tzolov "https://github.com/tzolov"
 
-RUN echo "---------------------- Create sudo & paswordless 'bigtop' user --------------------------" ;\
+RUN echo "---------------------- Create sudo & paswordless 'bigtop' user -----" ;\
    yum -y install sudo ;\
    useradd bigtop && echo "bigtop:bigtop" | chpasswd && gpasswd -a bigtop wheel ;\
    mkdir -p /home/bigtop && chown -R bigtop:bigtop /home/bigtop ;\
@@ -22,7 +22,7 @@ ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 ENV FORREST_HOME /opt/apache-forrest-0.9
 
 RUN cd ~ ;\
-echo "----------------------------- Install required packages --------------------------" ;\
+echo "----------------------------- Install required packages ------------" ;\
    sudo yum -y install wget tar git subversion gcc gcc-c++ make cmake fuse autoconf automake libtool sharutils xmlto ;\
    sudo yum -y install lzo-devel zlib-devel fuse-devel openssl-devel python-devel libxml2-devel libxslt-devel cyrus-sasl-devel sqlite-devel mysql-devel openldap-devel rpm-build createrepo redhat-rpm-config ;\
    sudo yum -y install python-setuptools asciidoc ;\
@@ -37,12 +37,12 @@ echo "----------------------------- Install Maven --------------------------" ;\
    tar -xzvf apache-maven-3.0.5-bin.tar.gz ;\
    sudo mv apache-maven-3.0.5 /opt/ ;\
    rm apache-maven-3.0.5-bin.tar.gz ;\   
-echo "----------------------------- Install Ant --------------------------" ;\
+echo "----------------------------- Install Ant ---------------------------" ;\
    wget http://archive.apache.org/dist/ant/binaries/apache-ant-1.9.4-bin.tar.gz ;\
    tar -xvzf apache-ant-1.9.4-bin.tar.gz ;\
    sudo mv apache-ant-1.9.4 /opt/apache-ant ;\
    rm apache-ant-1.9.4-bin.tar.gz ;\
-echo "----------------------------- Install Forrest --------------------------" ;\
+echo "----------------------------- Install Forrest ----------------------" ;\
    wget http://archive.apache.org/dist/forrest/0.9/apache-forrest-0.9.tar.gz ;\
    tar -xzvf apache-forrest-0.9.tar.gz ;\
    sed -i 's/property name="forrest.validate.sitemap" value="${forrest.validate}"/property name="forrest.validate.sitemap" value="false"/g' apache-forrest-0.9/main/targets/validate.xml ;\
@@ -51,7 +51,7 @@ echo "----------------------------- Install Forrest --------------------------" 
    sed -i 's/property name="forrest.validate.skins.stylesheets" value="${forrest.validate.skins}"/property name="forrest.validate.skins.stylesheets" value="false"/g' apache-forrest-0.9/main/targets/validate.xml ;\
    sudo mv apache-forrest-0.9 /opt/ ;\
    rm apache-forrest-0.9.tar.gz ;\
-echo "----------------------------- Install Protobuf --------------------------" ;\
+echo "----------------------------- Install Protobuf ---------------------" ;\
    wget http://protobuf.googlecode.com/files/protobuf-2.5.0.tar.bz2 ;\
    tar -xvf protobuf-2.5.0.tar.bz2 ;\
    cd protobuf-2.5.0 ;\
@@ -60,15 +60,16 @@ echo "----------------------------- Install Protobuf --------------------------"
    sudo make install ;\
    sudo ldconfig ;\
    cd ~ ;\
-echo "----------------------------- Install SSH Keys --------------------------" ;\
+echo "----------------------------- Install SSH Keys ---------------------" ;\
    ssh-keygen -t dsa -P '' -f ~/.ssh/id_dsa ;\
    cat ~/.ssh/id_dsa.pub >> ~/.ssh/authorized_keys ;\
-echo "----------------------------- Clone Bigtop --------------------------" ;\
-   git clone https://github.com/apache/bigtop.git ;\
+echo "----------------------------- Clone Bigtop -------------------------" ;\
+   git clone git://git.apache.org/bigtop.git
    sudo chown -R bigtop:bigtop bigtop ;\
    cd bigtop ;\
    git checkout HEAD ;\
    ./check-env.sh 
 
-# git clone git://git.apache.org/bigtop.git
+#   git clone https://github.com/apache/bigtop.git ;\
+
 
