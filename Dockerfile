@@ -64,7 +64,7 @@ echo "----------------------------- Install SSH Keys ---------------------" ;\
    ssh-keygen -t dsa -P '' -f ~/.ssh/id_dsa ;\
    cat ~/.ssh/id_dsa.pub >> ~/.ssh/authorized_keys ;\
 echo "----------------------------- Clone Bigtop -------------------------" ;\
-   git clone git://git.apache.org/bigtop.git
+   git clone git://git.apache.org/bigtop.git ;\
    sudo chown -R bigtop:bigtop bigtop ;\
    cd bigtop ;\
    git checkout HEAD ;\
