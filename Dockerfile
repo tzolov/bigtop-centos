@@ -68,7 +68,8 @@ echo "----------------------------- Clone Bigtop -------------------------" ;\
    sudo chown -R bigtop:bigtop bigtop ;\
    cd bigtop ;\
    git checkout HEAD ;\
-   ./check-env.sh 
+   ls -lah ;\
+   ./check-env.sh ;\
 
 #   git clone https://github.com/apache/bigtop.git ;\
 
