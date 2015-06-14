@@ -25,7 +25,7 @@ RUN cd ~ ;\
 echo "----------------------------- Install required packages ------------" ;\
    sudo yum -y install wget tar git subversion gcc gcc-c++ make cmake fuse autoconf automake libtool sharutils xmlto ;\
    sudo yum -y install lzo-devel zlib-devel fuse-devel openssl-devel python-devel libxml2-devel libxslt-devel cyrus-sasl-devel sqlite-devel mysql-devel openldap-devel rpm-build createrepo redhat-rpm-config ;\
-   sudo yum -y install python-setuptools asciidoc ;\
+   sudo yum -y install python-setuptools asciidoc libyaml-devel ;\
 echo "----------------------------- Install JDK --------------------------" ;\  
    wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/7u65-b17/jdk-7u65-linux-x64.rpm" ;\
    sudo yum -y install ./jdk-7u65-linux-x64.rpm; java -version ;\
