@@ -1,5 +1,5 @@
-# bigtop-centos
-Ready to use Docker environment for [Apache Bigtop](http://bigtop.apache.org/). Based on CentOS and equipped with all necessary tools and libraries. 
+# Apache Bigtop Docker Environment
+Ready to use Docker environment for [Apache Bigtop](http://bigtop.apache.org/). Based on CentOS and equipped with all necessary tools and libraries. To use the image follow the instructions bellow or read the [How-To Guide](http://blog.tzolov.net/2015/06/leverage-apache-bigtop-to-build-hadoop.html?view=sidebar).
 
 ### 1. Installation
 
