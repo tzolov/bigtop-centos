@@ -14,7 +14,7 @@ USER bigtop
 ENV JAVA_HOME /usr/java/jdk1.7.0_65
 ENV JAVA5_HOME /usr/java/jdk1.7.0_65
 ENV JVM_ARGS -Xmx2g -XX:MaxPermSize=512M -XX:ReservedCodeCacheSize=512m
-ENV MAVEN_HOME /opt/apache-maven-3.0.5
+ENV MAVEN_HOME /opt/apache-maven-3.3.3
 ENV MAVEN_OPTS -Xmx2g -XX:MaxPermSize=512M -XX:ReservedCodeCacheSize=512m
 ENV ANT_HOME /opt/apache-ant
 ENV SCALA_HOME /usr/share/scala
@@ -33,10 +33,10 @@ echo "----------------------------- Install JDK --------------------------" ;\
 echo "----------------------------- Install Scala --------------------------" ;\      
    sudo yum -y install http://www.scala-lang.org/files/archive/scala-2.11.5.rpm ;\
 echo "----------------------------- Install Maven --------------------------" ;\
-   wget http://apache.petsads.us/maven/maven-3/3.0.5/binaries/apache-maven-3.0.5-bin.tar.gz ;\
-   tar -xzvf apache-maven-3.0.5-bin.tar.gz ;\
-   sudo mv apache-maven-3.0.5 /opt/ ;\
-   rm apache-maven-3.0.5-bin.tar.gz ;\   
+   wget http://ftp.nluug.nl/internet/apache/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.tar.gz ;\
+   tar -xzvf apache-maven-3.3.3-bin.tar.gz ;\
+   sudo mv apache-maven-3.3.3 /opt/ ;\
+   rm apache-maven-3.3.3-bin.tar.gz ;\
 echo "----------------------------- Install Ant ---------------------------" ;\
    wget http://archive.apache.org/dist/ant/binaries/apache-ant-1.9.4-bin.tar.gz ;\
    tar -xvzf apache-ant-1.9.4-bin.tar.gz ;\
