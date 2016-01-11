@@ -26,6 +26,26 @@ To build all Bigtop RPMS use `./gradlew rpm`:
 
 To list all gradle tasks run `cd ~/bigtop && ./gradlew tasks`.
 
+To change the version of the target Hadoop project editing the `bigtop.mk` (up to `Bigtop 1.0.0`) or the `bigtop.bom` for newer (eg. > 1.0.0) versions. For example to change the Spark version from to the latest 1.6.0: 
+
+* (Up to Bigtop 1.0.0 including) open the `bigtop.mk`, find the Spark section (Starts with # Spark) and set the `SPARK_BASE_VERSION`
+and `SPARK_PKG_VERSION` properties like this:
+```
+    SPARK_BASE_VERSION=1.6.0
+    SPARK_PKG_VERSION=1.6.0
+```
+
+* (For > Bigtop 1.0.0) open the `bigtop.bom`, find the Saprk section and set the version: 
+```
+    'spark' {
+        name    = 'spark'
+        pkg     = 'spark-core'
+        relNotes = 'Apache Spark'
+        version { base = '1.6.0'; pkg = base; release = 1 }
+        .....
+    }
+```
+
 ## 3. Download built RPMs
 
 Copy the RPMs from the local folder `/home/bigtop/bigtop/build/**/rpm/RPMS/**/*.rpm` into the shared with the host folder `/rpm`
