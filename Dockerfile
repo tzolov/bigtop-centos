@@ -69,7 +69,6 @@ echo "----------------------------- Clone Bigtop -------------------------" ;\
    cd bigtop ;\
    git checkout HEAD ;\
    ls -lah ;\
-   ./check-env.sh ;\
 
 #   git clone https://github.com/apache/bigtop.git ;\
 
